@@ -78,7 +78,7 @@ variable "vmseries" {
       version           = "latest"
       management_ip     = "10.161.89.4"
       private_ip        = "10.161.89.36"
-      public_ip         = "10.161.89.52"
+      public_ip         = "10.161.89.20"
       # If not licensing authcode is needed leave this set to a value of a space (ie " ")
       authcodes = " "
     }
