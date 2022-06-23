@@ -178,8 +178,7 @@ resource "azurerm_linux_virtual_machine" "vmseries" {
 
   name = "${each.key}-vm"
 
-  # Availabilty Zone:
-  zone = each.value.availability_zone
+
 
   # Instance
   size = each.value.instance_size
