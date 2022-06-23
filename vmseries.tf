@@ -194,7 +194,6 @@ resource "azurerm_linux_virtual_machine" "vmseries" {
     azurerm_network_interface.management[each.key].id,
     azurerm_network_interface.ethernet0_1[each.key].id,
     azurerm_network_interface.ethernet0_2[each.key].id,
-    azurerm_network_interface.ethernet0_3[each.key].id,
   ]
 
   plan {
