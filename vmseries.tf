@@ -164,35 +164,7 @@ resource "azurerm_network_interface_security_group_association" "ethernet0_2" {
   network_security_group_id = azurerm_network_security_group.data[each.key].id
 }
 
-#----------------------------------------------------------------------------------------------------------------------
-# VM-Series - Ethernet0/2 Interface (Trust)
-#----------------------------------------------------------------------------------------------------------------------
 
-# Network Interface
-resource "azurerm_network_interface" "ethernet0_3" {
-  for_each             = var.vmseries
-  name                 = "${each.key}-nic-ethernet03"
-  location             = var.resource_location
-  resource_group_name  = var.resource_group_name
-  enable_ip_forwarding = true
-  enable_accelerated_networking = true
-
-  ip_configuration {
-    name                          = "ipconfig1"
-    subnet_id                     = azurerm_subnet.this["ha2"].id
-    private_ip_address_allocation = "Static"
-    private_ip_address            = each.value.ha2_ip
-  }
-  depends_on = [azurerm_resource_group.this]
-}
-
-# Network Security Group (Data)
-resource "azurerm_network_interface_security_group_association" "ethernet0_3" {
-  for_each                  = var.vmseries
-  network_interface_id      = azurerm_network_interface.ethernet0_3[each.key].id
-  network_security_group_id = azurerm_network_security_group.data[each.key].id
-}
-  
 #----------------------------------------------------------------------------------------------------------------------
 # VM-Series - Virtual Machine
 #----------------------------------------------------------------------------------------------------------------------
