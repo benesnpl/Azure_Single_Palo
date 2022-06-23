@@ -10,6 +10,7 @@ resource "azurerm_public_ip" "management" {
   allocation_method   = "Static"
   depends_on          = [azurerm_resource_group.this]
   sku                 = "Standard"
+
 }
 
 # Network Interface:
