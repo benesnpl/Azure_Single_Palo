@@ -76,10 +76,9 @@ variable "vmseries" {
       # License options "byol", "bundle1", "bundle2"
       license           = "byol"
       version           = "latest"
-      management_ip     = "100.71.64.4"
-      ha2_ip            = "100.71.64.20"
-      private_ip        = "100.71.64.36"
-      public_ip         = "100.71.64.52"
+      management_ip     = "10.161.89.4"
+      private_ip        = "10.161.89.36"
+      public_ip         = "10.161.89.52"
       availability_zone = 1
       # If not licensing authcode is needed leave this set to a value of a space (ie " ")
       authcodes = " "
