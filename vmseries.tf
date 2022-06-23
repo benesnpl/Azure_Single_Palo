@@ -58,7 +58,7 @@ resource "azurerm_network_interface_security_group_association" "management" {
   for_each                  = var.vmseries
   network_interface_id      = azurerm_network_interface.management[each.key].id
   network_security_group_id = azurerm_network_security_group.management[each.key].id
-  
+} 
   
  #----------------------------------------------------------------------------------------------------------------------
 # VM-Series - Ethernet0/1 Interface (Untrust)
